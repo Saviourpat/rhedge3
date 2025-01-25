@@ -242,7 +242,7 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 20px;
+  font-size: 30px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
@@ -251,7 +251,7 @@ h6 {
 
 .header .logo span {
   color: var(--accent-color);
-  font-size: 30px;
+  font-size: 36px;
 }
 
 .header .btn-getstarted,
@@ -1241,6 +1241,13 @@ section,
   border: 4px solid var(--background-color);
   margin: 0 auto;
 }
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
 
 .testimonials .testimonial-item h3 {
   font-size: 20px;
@@ -1303,6 +1310,66 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .testimonials .testimonial-item h3 {
+    font-size: 16px; /* Reduce font size */
+  }
+
+  .testimonials .testimonial-item h4 {
+    font-size: 12px; /* Reduce font size */
+    margin: 0 0 5px 0; /* Adjust margin */
+  }
+
+  .testimonials .testimonial-item .testimonial-content {
+    padding-left: 20px; /* Reduce padding */
+  }
+
+ /* Default for desktop */
+.testimonials .testimonial-item .testimonial-img {
+  border-radius: 50%;
+  border: 4px solid var(--background-color);
+  margin: 0 auto;
+  width: 100px; /* Default size for desktop */
+  height: 100px; /* Default size for desktop */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .testimonials .testimonial-item .testimonial-img {
+    width: 70px; /* Smaller size for mobile */
+    height: 70px; /* Smaller size for mobile */
+  }
+}
+
+
+  .testimonials .testimonial-item .quote-icon-left,
+  .testimonials .testimonial-item .quote-icon-right {
+    font-size: 20px; /* Reduce icon size */
+  }
+
+  .testimonials .testimonial-item p {
+    font-size: 14px; /* Reduce font size for testimonial text */
+  }
+
+  .testimonials .swiper-wrapper {
+    padding-left: 10px; /* Adjust padding */
+    padding-right: 10px; /* Adjust padding */
+  }
+
+  .testimonials .swiper-pagination {
+    margin-top: 20px; /* Reduce space between the carousel and pagination */
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 8px; /* Make pagination bullets smaller */
+    height: 8px; /* Make pagination bullets smaller */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Events Section
