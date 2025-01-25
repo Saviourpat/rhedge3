@@ -9,6 +9,11 @@
 (function() {
   "use strict";
 
+  (function() {
+    emailjs.init("M6-MMZILX1YRxiqSx"); // Replace with your EmailJS User ID
+  })();
+  
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
@@ -175,7 +180,6 @@
 
 })();
 
-script>
   // JavaScript function to toggle the visibility of menu item details
   function toggleDetails(element) {
     const details = element.nextElementSibling;
@@ -185,3 +189,31 @@ script>
       details.style.display = "none";
     }
   }
+
+
+  document.getElementById("booking-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+  
+    // Collect form data
+    const formData = new FormData(event.target); // Collect the form data
+    const formObject = Object.fromEntries(formData.entries()); // Convert form data to a plain object
+  
+    // Send email to restaurant (replace placeholders with form data)
+    emailjs.send("service_qjfp33o", "template_1h1dpzu", formObject)
+      .then(function(response) {
+        console.log("Restaurant email sent:", response);
+      }, function(error) {
+        console.error("Error sending restaurant email:", error);
+      });
+  
+    // Send confirmation email to the user (replace placeholders with form data)
+    emailjs.send("service_qjfp33o", "template_ugsroy8", formObject)
+      .then(function(response) {
+        console.log("Confirmation email sent:", response);
+        alert("Your booking request was sent. We will call or email you to confirm your reservation.");
+      }, function(error) {
+        console.error("Error sending confirmation email:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+  });
+  
